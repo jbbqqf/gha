@@ -1,0 +1,11 @@
+on: push
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Run some tests
+        run: ./run_tests.sh
