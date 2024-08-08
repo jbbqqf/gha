@@ -1,4 +1,4 @@
-on: push
+on: workflow_call
 
 jobs:
   my-job:
@@ -7,5 +7,5 @@ jobs:
       - name: Get the code
         uses: actions/checkout@v4
 
-      - name: Run some tests
-        run: ./run_tests.sh
+      - name: ls
+        run: ls
