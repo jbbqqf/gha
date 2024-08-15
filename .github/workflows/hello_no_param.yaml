@@ -1,0 +1,9 @@
+# Trigger from the GUI or the gh cli
+on: workflow_dispatch
+
+jobs:
+  j1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step 1
+        run: echo "hello world"
