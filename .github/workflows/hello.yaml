@@ -1,8 +1,10 @@
-on: workflow_call
+on: push
 
 jobs:
-  my-job:
+  j1:
     runs-on: ubuntu-latest
+    # Only for the main branch
+    if: github.ref_name == 'main'
     steps:
-      - name: echo
-        run: echo "hey"
+      - name: step 1
+        run: echo "hello main"
