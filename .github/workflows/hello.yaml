@@ -1,10 +1,15 @@
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      hello:
+        description: doc on this input
+        type: string
+        required: false
+        default: bob
 
 jobs:
   j1:
     runs-on: ubuntu-latest
-    # Only for the main branch
-    if: github.ref_name == 'main'
     steps:
       - name: step 1
-        run: echo "hello main"
+        run: echo "hello ${{ inputs.hello }}"
