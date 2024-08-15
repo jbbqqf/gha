@@ -1,0 +1,16 @@
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      hello:
+        description: doc on this input
+        type: string
+        required: false
+        default: bob
+
+jobs:
+  j1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step 1
+        run: echo "hello ${{ inputs.hello }}"
