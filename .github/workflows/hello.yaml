@@ -2,11 +2,6 @@ on: push
 
 jobs:
   j1:
-    runs-on: ubuntu-latest
-    container:
-      image: alpine:3.20
-      env:
-        HELLO: hello alpine
-    steps:
-      - run: ls -a /
-      - run: echo $HELLO
+    uses: ./.github/workflows/call.yaml
+    with:
+      env: dev
