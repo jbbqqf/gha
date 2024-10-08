@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Hello
         run: echo "${{ inputs.abc }}"
-      - name: git clone
-        uses: actions/checkout@v4
+        # - name: git clone
+        #   uses: actions/checkout@v4
       - name: Merge
         run: gh pr merge --merge
         env:
