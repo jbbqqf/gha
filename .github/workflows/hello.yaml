@@ -3,5 +3,6 @@ on: push
 jobs:
   j1:
     uses: ./.github/workflows/call.yaml
-    with:
-      env: dev
+    # Pass all secrets available in the
+    # caller context
+    secrets: inherit
