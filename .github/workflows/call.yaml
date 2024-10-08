@@ -1,13 +1,17 @@
 on:
   workflow_call:
     inputs:
-      env:
+      abc:
+        required: true
         type: string
-        default: prod
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Hello
-        run: echo "${{ inputs.env }}"
+        run: echo "${{ inputs.abc }}"
+      - name: Merge
+        run: gh pr merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
