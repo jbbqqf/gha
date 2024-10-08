@@ -1,5 +1,5 @@
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       abc:
         required: true
@@ -7,11 +7,15 @@ on:
 
 jobs:
   test:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Hello
         run: echo "${{ inputs.abc }}"
+      - name: git clone
+        uses: actions/checkout@v4
       - name: Merge
-        run: gh pr merge
+        run: gh pr merge --merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
