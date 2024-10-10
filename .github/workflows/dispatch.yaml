@@ -1,0 +1,16 @@
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      abc:
+        description: "hello world"
+        required: true
+        default: hey
+        type: string
+
+jobs:
+  j1:
+    uses: .github/workflows/call.yaml
+    with:
+      abc: ${{ inputs.abc }}
+    secrets: inherit

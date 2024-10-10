@@ -1,9 +1,0 @@
-on:
-  merge_group:
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hello
-        run: echo "${{ inputs.env }}"
