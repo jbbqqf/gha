@@ -10,6 +10,7 @@ on:
 
 jobs:
   j:
+    runs-on: ubuntu-latest
     steps:
       - name: Test authentication by executing a simple gcloud command
         run: gcloud storage ls
