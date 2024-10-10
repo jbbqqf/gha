@@ -9,8 +9,12 @@ on:
         type: string
 
 jobs:
-  j1:
-    uses: .github/workflows/call.yaml
-    with:
-      abc: ${{ inputs.abc }}
-    secrets: inherit
+  j:
+    steps:
+      - name: Test authentication by executing a simple gcloud command
+        run: gcloud storage ls
+  # j1:
+  #   uses: .github/workflows/call.yaml
+  #   with:
+  #     abc: ${{ inputs.abc }}
+  #   secrets: inherit
